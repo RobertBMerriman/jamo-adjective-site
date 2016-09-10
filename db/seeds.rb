@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+
+require_relative "../lib/tasks/seed_from_file.rb"
+
+# Seed db with adjectives from file
+def seed_with_adjectives
+  words = Seed::get_adjective_list
+
+  words.each do |word|
+    Adjective.create(word: word)
+  end
+end
+
+
+seed_with_adjectives # Uncomment this file to stop seeding with adjectives
