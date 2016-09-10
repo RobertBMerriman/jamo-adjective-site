@@ -10,9 +10,12 @@
 
 require_relative "../lib/tasks/seed_from_file.rb"
 
+
+include AdjectiveSeed
+
 # Seed db with adjectives from file
 def seed_with_adjectives
-  words = Seed::get_adjective_list
+  words = AdjectiveSeed::get_adjective_list
 
   words.each do |word|
     Adjective.create(word: word)
