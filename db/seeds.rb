@@ -18,9 +18,11 @@ def seed_with_adjectives
   words = AdjectiveSeed::get_adjective_list
 
   words.each do |word|
+    word = word.downcase.squish.strip # Remove unnecessary whitespace
     Adjective.create(word: word)
+    puts word
   end
 end
 
 
-seed_with_adjectives # Uncomment this file to stop seeding with adjectives
+seed_with_adjectives # Comment this file to stop seeding with adjectives
