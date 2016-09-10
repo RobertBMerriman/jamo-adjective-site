@@ -3,12 +3,20 @@ class RootController < ApplicationController
 
   def index
 
-    adjective = Adjective.limit(1).offset(rand(Adjective.count)).first # Find a random record
+    adjective = Adjective.find_random
     @word = error_check_adjective(adjective)
 
   end
 
+  def reload_adjectives
 
+    adjective = Adjective.find_random
+    @word = error_check_adjective(adjective)
+
+    respond_to do |format|
+        format.js
+    end
+  end
 
 
   private

@@ -6,6 +6,15 @@
   <br />
   <br />
 
-  <h1 class="adjective"><%= @word %></h1>
+  <div id="adjective-wrapper">
+    <%= render partial: 'adjective' %>
+  </div>
 
-</div>
+  <br />
+  <br />
+
+  <div style="text-align: center;">
+    <%= button_to "Reload", reload_adjectives_path, remote: true, method: :get %>
+  </div>
+
+</>
