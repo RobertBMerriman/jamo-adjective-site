@@ -1,1 +1,3 @@
-$("#adjective-wrapper").html("<%= escape_javascript(render partial: 'adjective') %>");
+<% Adjective.number_to_show.times do |index| %>
+  $("#adjective-wrapper-<%= index %>").html("<%= escape_javascript(render partial: 'adjective', locals: { index: index }) %>");
+<% end %>

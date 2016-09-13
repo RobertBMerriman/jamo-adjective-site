@@ -5,12 +5,14 @@
 
 <div class="container">
 
-  <div id="adjective-wrapper" class="adjective-wrapper">
-    <%= render partial: 'adjective' %>
-  </div>
+  <% Adjective.number_to_show.times do |index| %>
+    <div id="adjective-wrapper-<%= index %>" class="adjective-wrapper">
+      <%= render partial: 'adjective', locals: { index: index } %>
+    </div>
+  <% end %>
 
   <div style="text-align: center;">
-    <%= link_to "Reload", reload_adjectives_path, remote: true, class: "btn btn-primary" %>
+    <%= link_to "Reload", reload_adjectives_path, remote: true, class: "btn btn-lg btn-primary" %>
   </div>
 
 </>

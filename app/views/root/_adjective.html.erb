@@ -1,1 +1,2 @@
-<p class="adjective"><%= @word %></p>
+<%# "locals: { index: index }" %>
+<p class="adjective"><%= @words ? @words[index] : "Internal Error: Words object is null, please reload." %></p>

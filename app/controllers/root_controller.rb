@@ -3,15 +3,13 @@ class RootController < ApplicationController
 
   def index
 
-    adjective = Adjective.find_random
-    @word = error_check_adjective(adjective)
+    get_random_adjectives
 
   end
 
   def reload_adjectives
 
-    adjective = Adjective.find_random
-    @word = error_check_adjective(adjective)
+    get_random_adjectives
 
     respond_to do |format|
         format.js
@@ -20,6 +18,14 @@ class RootController < ApplicationController
 
 
   private
+
+    def get_random_adjectives
+      @words = []
+      Adjective.number_to_show.times do
+        adjective = Adjective.find_random
+        @words << error_check_adjective(adjective)
+      end
+    end
 
     # Small routine to check if the adjective is nil or blank
     # and if the word is nil or blank
