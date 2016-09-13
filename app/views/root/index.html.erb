@@ -1,14 +1,16 @@
 
+<div class="jumbotron jumbotron-orange">
+  <h1 style="text-align: center;">Jamo Adjective Site</h1>
+</div>
+
 <div class="container">
 
-  <h1 style="text-align: center;">Jamo Adjective Site</h1>
-
-  <div id="adjective-wrapper">
+  <div id="adjective-wrapper" class="adjective-wrapper">
     <%= render partial: 'adjective' %>
   </div>
 
   <div style="text-align: center;">
-    <%= link_to "Reload", reload_adjectives_path, remote: true, class: "btn btn-sm btn-primary" %>
+    <%= link_to "Reload", reload_adjectives_path, remote: true, class: "btn btn-primary" %>
   </div>
 
 </>

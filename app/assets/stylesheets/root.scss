@@ -2,8 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.jumbotron-orange
+{
+  color: white;
+  background-color: orange;
+}
+
+.adjective-wrapper
+{
+  margin-top: 0.5em;
+  margin-bottom: 2.5em;
+
+  text-align: center;
+
+  font-size: 2em;
+}
+
 .adjective
 {
+  display: inline-block;
+
   color: #555;
   text-align: center;
 }
